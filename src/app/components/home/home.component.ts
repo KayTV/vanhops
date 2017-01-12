@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  text: any = { "Weeks": "Weeks",
+    "Days": "Days", "Hours": "Hours",
+     Minutes: "Minutes", "Seconds": "Seconds",
+    "MilliSeconds":"MilliSeconds" };
+    
 }

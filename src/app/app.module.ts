@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AppRoutingModule }     from './app.routing';
 import { CollapseDirective } from 'ng2-bootstrap/collapse';
+import {CountDown} from "../../node_modules/angular2-simple-countdown/countdown";
 
 import './core/rxjs-extensions';
 import { firebaseConfig } from './core/firebaseConfig';
@@ -26,7 +27,8 @@ import { FirebaseService } from './services/firebase.service';
     DetailsComponent,
     InstagramComponent,
     RegistryComponent,
-    CollapseDirective
+    CollapseDirective,
+    CountDown
   ],
   imports: [
     BrowserModule,
