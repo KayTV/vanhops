@@ -24,9 +24,11 @@
   <h3>Bridesmaids</h3>
 </div>
 <div *ngFor="let bridesmaid of bridesmaids">
-  <div class="col-xs-12 partybox">
-    <h4>{{bridesmaid.name}}</h4>
-    <h4>Role: {{bridesmaid.role}}</h4>
+  <div class="col-xs-12 col-md-3">
+    <div class="partybox">
+      <h4>{{bridesmaid.name}}</h4>
+      <h4>Role: {{bridesmaid.role}}</h4>
+    </div>
   </div>
 </div>
 
@@ -34,9 +36,11 @@
   <h3>Groomsmen</h3>
 </div>
 <div *ngFor="let groomsman of groomsmen">
-  <div class="col-xs-12  partybox">
-    <h4>{{groomsman.name}}</h4>
-    <h4>Role: {{groomsman.role}}</h4>
+  <div class="col-xs-12 col-md-3">
+    <div class="partybox">
+      <h4>{{groomsman.name}}</h4>
+      <h4>Role: {{groomsman.role}}</h4>
+    </div>
   </div>
 </div><br>
 
