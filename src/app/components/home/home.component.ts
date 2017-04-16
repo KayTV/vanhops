@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  styleUrls: ['../../styles/home.css']
 })
 export class HomeComponent {
 
@@ -10,5 +11,5 @@ export class HomeComponent {
     "Days": "Days", "Hours": "Hours",
      Minutes: "Minutes", "Seconds": "Seconds",
     "MilliSeconds":"MilliSeconds" };
-    
+
 }
