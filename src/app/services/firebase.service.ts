@@ -3,12 +3,14 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { Party } from '../models/Party';
 import { Registry } from '../models/Registry';
+import { Bridal } from '../models/Bridal';
 
 @Injectable()
 export class FirebaseService {
   bridesmaids: FirebaseListObservable<Party[]>;
   groomsmen: FirebaseListObservable<Party[]>;
   registry: FirebaseListObservable<Registry[]>;
+  bridalGuests: FirebaseListObservable<Bridal[]>;
 
   constructor(private af: AngularFire) { }
 
@@ -28,5 +30,17 @@ export class FirebaseService {
     this.registry = this.af.database.list('/registry') as
     FirebaseListObservable<Registry[]>
     return this.registry;
+  }
+
+  addBridalGuest(name: string, attending: string, notes: string) {
+    this.bridalGuests = this.af.database.list('/bridal') as
+    FirebaseListObservable<Bridal[]>
+    this.bridalGuests.push({name: name, attending: attending, notes: notes});
+  }
+
+  getBridalGuests() {
+    this.bridalGuests = this.af.database.list('/bridal') as
+    FirebaseListObservable<Bridal[]>
+    return this.bridalGuests;
   }
 }

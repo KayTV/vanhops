@@ -7,6 +7,8 @@ import { AboutComponent } from './components/about/about.component';
 import { InstagramComponent } from './components/instagram/instagram.component';
 import { RegistryComponent } from './components/registry/registry.component';
 import { BridalComponent } from './components/bridal/bridal.component';
+import { BridalConfirmComponent } from './components/bridal/confirm/confirm.component';
+import { ForLisaComponent } from './components/bridal/forLisa/forLisa.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +34,14 @@ const appRoutes: Routes = [
   {
     path: 'bridal',
     component: BridalComponent
+  },
+  {
+    path: 'bridal/confirm',
+    component: BridalConfirmComponent
+  },
+  {
+    path: 'bridal/forLisa',
+    component: ForLisaComponent
   },
   {
     path: '',

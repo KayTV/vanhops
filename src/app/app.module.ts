@@ -18,6 +18,8 @@ import { AboutComponent } from './components/about/about.component';
 import { InstagramComponent } from './components/instagram/instagram.component';
 import { RegistryComponent } from './components/registry/registry.component';
 import { BridalComponent } from './components/bridal/bridal.component';
+import { BridalConfirmComponent } from './components/bridal/confirm/confirm.component';
+import { ForLisaComponent } from './components/bridal/forLisa/forLisa.component';
 
 import { FirebaseService } from './services/firebase.service';
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -31,6 +33,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     InstagramComponent,
     RegistryComponent,
     BridalComponent,
+    BridalConfirmComponent,
+    ForLisaComponent,
     CountDown
   ],
   imports: [

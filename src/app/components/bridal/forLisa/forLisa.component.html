@@ -1,0 +1,15 @@
+<div class="col-xs-12">
+  <header>
+    <h2>Responses: </h2>
+  </header>
+</div>
+
+<div *ngFor="let bridalGuest of bridalGuests">
+  <div class="col-xs-12">
+    <div class="partybox">
+      <h4>Name(s): {{bridalGuest.name}}</h4>
+      <h4>Reply: {{bridalGuest.attending}}</h4>
+      <h5>Note: {{bridalGuest.notes}}</h5>
+    </div>
+  </div>
+</div>
