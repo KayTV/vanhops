@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AppRoutingModule }     from './app.routing';
-import { CollapseDirective } from 'ng2-bootstrap/collapse';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import {CountDown} from "../../node_modules/angular2-simple-countdown/countdown";
 
 import './core/rxjs-extensions';
@@ -31,10 +31,10 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     InstagramComponent,
     RegistryComponent,
     BridalComponent,
-    CollapseDirective,
-    CountDown,
+    CountDown
   ],
   imports: [
+    CollapseModule.forRoot(),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
