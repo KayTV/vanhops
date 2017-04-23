@@ -26,6 +26,7 @@ npm-debug.log
 testem.log
 /typings
 firebaseConfig.ts
+googleApi.ts
 
 # e2e
 /e2e/*.js

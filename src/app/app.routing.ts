@@ -6,6 +6,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { AboutComponent } from './components/about/about.component';
 import { InstagramComponent } from './components/instagram/instagram.component';
 import { RegistryComponent } from './components/registry/registry.component';
+import { BridalComponent } from './components/bridal/bridal.component';
 
 const appRoutes: Routes = [
   {
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
   {
     path: 'registry',
     component: RegistryComponent
+  },
+  {
+    path: 'bridal',
+    component: BridalComponent
   },
   {
     path: '',
