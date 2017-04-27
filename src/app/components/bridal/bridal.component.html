@@ -5,46 +5,47 @@
       <img style="height: 70%; width: 70%; margin: 5px;" src="assets/engagement1 copy.jpg" >
   </header>
 </div>
+<body>
+  <div class="col-xs-12">
+    <h2>Location:</h2>
+    <h3>Island Shelter in Ellison Park</h3>
+    <h3>Rochester, NY</h3>
+    <h4>Date: July 29th, Time: 11:30AM - 3:00PM</h4>
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    </sebm-google-map>
+    <h3>Also here's a Link: <a href="https://www.google.com/maps/place/Island+Shelter/@43.1462348,-77.5169181,17.7z/data=!4m5!3m4!1s0x89d6cbaaad079125:0xbe738529a6631697!8m2!3d43.1450539!4d-77.515922" target="_blank">Bridal Shower!!</a></h3>
+  </div>
 
-<div class="col-xs-12">
-  <h2>Location:</h2>
-  <h3>Island Shelter in Ellison Park</h3>
-  <h3>Rochester, NY</h3>
-  <h4>Time 11:30AM - 3:00PM</h4>
-  <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-  </sebm-google-map>
-  <h3>Also here's a Link: <a href="https://www.google.com/maps/place/Island+Shelter/@43.1462348,-77.5169181,17.7z/data=!4m5!3m4!1s0x89d6cbaaad079125:0xbe738529a6631697!8m2!3d43.1450539!4d-77.515922" target="_blank">Bridal Shower!!</a></h3>
-</div>
-
-<div class="col-xs-12">
-  <h2>Are you coming?? RSVP!</h2>
-</div>
-<form class="form-horizontal">
-  <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Name(s):</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" placeholder="Name" #name>
-    </div>
+  <div class="col-xs-12">
+    <h2>Are you coming?? RSVP!</h2>
   </div>
-  <div class="form-group">
-    <label for="answer" class="col-sm-2 control-label">RSVP!!</label>
-    <div class="col-sm-10">
-      <select class="form-control" id="answer" #attending>
-        <option>Game On! I'll be there!</option>
-        <option>Game Over, can't make it...</option>
-      </select>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="name" class="col-sm-2 control-label">Name(s):</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" placeholder="Name" #name>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="note" class="col-sm-2 control-label">Notes??</label>
-    <div class="col-sm-10">
-      <textarea class="form-control" rows="3" id="note" #notes></textarea>
+    <div class="form-group">
+      <label for="answer" class="col-sm-2 control-label">RSVP!!</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="answer" #attending>
+          <option>Game On! I'll be there!</option>
+          <option>Game Over, can't make it...</option>
+        </select>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button (click)="addGuest(name.value, attending.value, notes.value)" type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+      <label for="note" class="col-sm-2 control-label">Notes??</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="3" id="note" #notes></textarea>
+      </div>
     </div>
-  </div>
-</form>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button (click)="addGuest(name.value, attending.value, notes.value)" type="button" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</body>
