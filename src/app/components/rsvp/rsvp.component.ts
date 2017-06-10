@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router, ActivatedRoute, Params  } from '@angular/router';
 
 import { FirebaseService } from '../../services/firebase.service';
@@ -12,13 +12,14 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['../../styles/shared.css']
 })
 
-export class RSVPComponent {
+export class RSVPComponent implements OnInit {
   total: number;
   guests: String[];
   rsvp: number;
   id: any;
   answers = [];
   answered: boolean = false;
+  household: Household;
 
   constructor(
     private firebaseService: FirebaseService,
@@ -34,19 +35,23 @@ export class RSVPComponent {
   getGuest() {
     this.firebaseService.getHousehold(this.id)
       .subscribe((household: Household) => {
+        console.log(household);
+        this.household = household;
         this.guests = household.guests;
         this.rsvp = household.rsvp;
         this.total = household.total;
-        console.log(this.guests);
       });
   }
 
   updateRsvp(key: string, attending: string){
-    this.answers.unshift({name: key, rsvp: attending});
+    this.answers.push({name: key, rsvp: attending});
   }
 
-  submitRsvp() {
+  submitRsvp(note: string, plusone: string) {
+    this.answers.push({note: note}, {plusone: plusone});
+    console.log(this.answers);
     this.firebaseService.updateRsvp(this.id, this.answers);
+    console.log(note, plusone);
     setTimeout(() => this.redirect(), 500);
   }
 

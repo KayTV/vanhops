@@ -3,4 +3,5 @@ export interface Household {
   guests: string[];
   rsvp: number;
   total: number;
+  plus1?: string;
 }

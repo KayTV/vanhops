@@ -8,8 +8,8 @@
   </div>
   <form class="form-horizontal">
     <div class="form-group" *ngFor="let guest of guests">
-      <label for="name" class="col-sm-4 control-label">Are you attending {{guest}}?</label>
       <div>
+      <label for="name" class="col-sm-4 control-label">Are you attending {{guest}}?</label>
         <label class="checkbox-inline col-sm-3">
           <input type="checkbox" (click)="updateRsvp(guest, 'Yes')"> Game On! I'll be there!
         </label>
@@ -18,9 +18,23 @@
         </label>
       </div>
     </div>
+    <div [hidden]="!household?.plus1">
+      <div class="form-group">
+        <label for="name" class="col-sm-4 control-label">Plus 1's Name:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="name" placeholder="Name" #plusone>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="note" class="col-sm-4 control-label">Notes??</label>
+      <div class="col-sm-6">
+        <textarea class="form-control" rows="3" id="note" #notes></textarea>
+      </div>
+    </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button (click)="submitRsvp()" type="button" class="btn btn-default">Submit</button>
+        <button (click)="submitRsvp(notes.value, plusone.value)" type="button" class="btn btn-default">Submit</button>
       </div>
     </div>
   </form>

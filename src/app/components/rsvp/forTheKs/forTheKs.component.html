@@ -6,10 +6,13 @@
 
 <div *ngFor="let guest of guests">
   <div class="col-xs-12" *ngIf="guest.answers">
-    <div class="partybox" *ngFor="let answer of guest.answers">
-      <h4>Name(s): {{answer.name}}</h4>
-      <h4>Reply: {{answer.rsvp}}</h4>
-      <!-- <h5>Note: {{bridalGuest.notes}}</h5> -->
+    <div class="partybox" >
+      <div *ngFor="let answer of guest.answers">
+        <h4 *ngIf="answer.name">Name: {{answer.name}}</h4>
+        <h4 *ngIf="answer.rsvp">Reply: {{answer.rsvp}}</h4>
+        <h5 *ngIf="answer.note">Note: {{answer.note}}</h5>
+        <h5 *ngIf="answer.plusone">Plus 1: {{answer.plusone}}</h5>
+      </div>
     </div>
   </div>
 </div>
