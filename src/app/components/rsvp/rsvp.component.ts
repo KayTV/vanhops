@@ -43,12 +43,14 @@ export class RSVPComponent {
 
   updateRsvp(key: string, attending: string){
     this.answers.unshift({name: key, rsvp: attending});
-    // this.answered = true;
-    console.log(this.answers);
+  }
+
+  submitRsvp() {
     this.firebaseService.updateRsvp(this.id, this.answers);
+    setTimeout(() => this.redirect(), 500);
   }
 
   redirect() {
-    this.router.navigate(['/rsvp/confirm'])
+    this.router.navigate(['/rsvp/'+this.id+'/confirm'])
   }
 }

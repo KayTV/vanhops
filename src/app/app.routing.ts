@@ -10,6 +10,8 @@ import { BridalComponent } from './components/bridal/bridal.component';
 import { BridalConfirmComponent } from './components/bridal/confirm/confirm.component';
 import { ForLisaComponent } from './components/bridal/forLisa/forLisa.component';
 import { RSVPComponent } from './components/rsvp/rsvp.component';
+import { RsvpConfirmComponent } from './components/rsvp/confirm/confirm.component';
+import { ForTheKsComponent } from './components/rsvp/forTheKs/forTheKs.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +49,14 @@ const appRoutes: Routes = [
   {
     path: 'rsvp/:id',
     component: RSVPComponent
+  },
+  {
+    path: 'rsvp/:id/confirm',
+    component: RsvpConfirmComponent
+  },
+  {
+    path: 'forTheKs',
+    component: ForTheKsComponent
   },
   {
     path: '',

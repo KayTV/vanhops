@@ -13,6 +13,7 @@ export class FirebaseService {
   registry: FirebaseListObservable<Registry[]>;
   bridalGuests: FirebaseListObservable<Bridal[]>;
   household: FirebaseObjectObservable<Household>;
+  guests: FirebaseListObservable<Household[]>;
   rsvp: {
     name: string;
     rsvp: string;
@@ -57,8 +58,14 @@ export class FirebaseService {
   }
 
   updateRsvp(index: number, answers: any) {
-    this.household = this.af.database.object('/households/'+index+'/rsvp') as
+    this.household = this.af.database.object('/households/'+index) as
     FirebaseObjectObservable<Household>
-    this.household.set({answers: answers});
+    this.household.update({answers: answers});
+  }
+
+  getGuests() {
+    this.guests = this.af.database.list('/households') as
+    FirebaseListObservable<Household[]>
+    return this.guests;
   }
 }

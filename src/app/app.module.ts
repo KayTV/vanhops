@@ -21,6 +21,8 @@ import { BridalComponent } from './components/bridal/bridal.component';
 import { BridalConfirmComponent } from './components/bridal/confirm/confirm.component';
 import { ForLisaComponent } from './components/bridal/forLisa/forLisa.component';
 import { RSVPComponent } from './components/rsvp/rsvp.component';
+import { RsvpConfirmComponent } from './components/rsvp/confirm/confirm.component';
+import { ForTheKsComponent } from './components/rsvp/forTheKs/forTheKs.component';
 
 import { FirebaseService } from './services/firebase.service';
 import { AgmCoreModule } from 'angular2-google-maps/core';
@@ -37,6 +39,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     BridalConfirmComponent,
     ForLisaComponent,
     RSVPComponent,
+    RsvpConfirmComponent,
+    ForTheKsComponent,
     CountDown
   ],
   imports: [

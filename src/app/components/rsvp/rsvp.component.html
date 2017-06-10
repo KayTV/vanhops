@@ -9,28 +9,19 @@
   <form class="form-horizontal">
     <div class="form-group" *ngFor="let guest of guests">
       <label for="name" class="col-sm-4 control-label">Are you attending {{guest}}?</label>
-      <div [hidden]="answered">
-        <div class="col-sm-4">
-          <button (click)="updateRsvp(guest, 'Yes')" type="button" class="btn btn-default">Game On! I'll be there!</button>
-        </div>
-        <div class="col-sm-4">
-          <button (click)="updateRsvp(guest, 'No')" type="button" class="btn btn-default">Game Over, can't make it...</button>
-        </div>
+      <div>
+        <label class="checkbox-inline col-sm-3">
+          <input type="checkbox" (click)="updateRsvp(guest, 'Yes')"> Game On! I'll be there!
+        </label>
+        <label class="checkbox-inline col-sm-3">
+          <input type="checkbox" (click)="updateRsvp(guest, 'No')"> Game Over, can't make it...
+        </label>
       </div>
-      <!-- <div class="col-sm-8">
-        <select class="form-control" id="answer" #attending[guest.name]>
-          <option>Game On! I'll be there!</option>
-          <option>Game Over, can't make it...</option>
-        </select>
-      </div> -->
-      <!-- <div class="col-sm-offset-2 col-sm-10">
-        <button (click)="updateRsvp(guest, attending.value)" type="button" class="btn btn-default">Submit</button>
-      </div> -->
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button (click)="updateRsvp(guest.name)" type="button" class="btn btn-default">Submit</button>
+        <button (click)="submitRsvp()" type="button" class="btn btn-default">Submit</button>
       </div>
-    </div> -->
+    </div>
   </form>
 </div>
