@@ -9,6 +9,7 @@ import { RegistryComponent } from './components/registry/registry.component';
 import { BridalComponent } from './components/bridal/bridal.component';
 import { BridalConfirmComponent } from './components/bridal/confirm/confirm.component';
 import { ForLisaComponent } from './components/bridal/forLisa/forLisa.component';
+import { RSVPComponent } from './components/rsvp/rsvp.component';
 
 const appRoutes: Routes = [
   {
@@ -42,6 +43,10 @@ const appRoutes: Routes = [
   {
     path: 'bridal/forLisa',
     component: ForLisaComponent
+  },
+  {
+    path: 'rsvp/:id',
+    component: RSVPComponent
   },
   {
     path: '',

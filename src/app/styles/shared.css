@@ -42,3 +42,7 @@ a:hover {
 .sebm-google-map-container {
   height: 400px;
 }
+
+.partybox p {
+  font-size: 40px;
+}
