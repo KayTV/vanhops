@@ -35,7 +35,6 @@ export class RSVPComponent implements OnInit {
   getGuest() {
     this.firebaseService.getHousehold(this.id)
       .subscribe((household: Household) => {
-        console.log(household);
         this.household = household;
         this.guests = household.guests;
         this.rsvp = household.rsvp;
@@ -49,9 +48,7 @@ export class RSVPComponent implements OnInit {
 
   submitRsvp(note: string, plusone: string) {
     this.answers.push({note: note}, {plusone: plusone});
-    console.log(this.answers);
     this.firebaseService.updateRsvp(this.id, this.answers);
-    console.log(note, plusone);
     setTimeout(() => this.redirect(), 500);
   }
 

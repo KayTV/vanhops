@@ -10,8 +10,11 @@ import { Household } from '../../../models/Household';
 })
 export class ForTheKsComponent implements OnInit {
   guests: Household[];
-
-  constructor(private firebaseService: FirebaseService) { }
+  total: number;
+  
+  constructor(private firebaseService: FirebaseService) {
+    this.total = 0;
+  }
 
   ngOnInit() {
     this.getGuests();

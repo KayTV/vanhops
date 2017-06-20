@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['../../styles/shared.css']
 })
 export class DetailsComponent {
+  lat: number = 43.1914144;
+  lng: number = -77.7362001;
+  zoom: number = 15;
 
 }
