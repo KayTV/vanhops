@@ -9,13 +9,12 @@
   <form class="form-horizontal">
     <div class="form-group" *ngFor="let guest of guests">
       <div>
-      <label for="name" class="col-sm-4 control-label">Are you attending {{guest}}?</label>
-        <label class="checkbox-inline col-sm-3">
-          <input type="checkbox" (click)="updateRsvp(guest, 'Yes')"> Game On! I'll be there!
+      <label class="col-sm-4 control-label">Are you attending {{guest}}?</label>
+      <div *ngFor="let status of statuses">
+        <label [attr.for]="guest" class="radio-inline col-sm-3">
+          <input type="radio" [value]="status" [attr.name]="guest" (change)="updateRsvp(guest, status, $event)"> {{status}}
         </label>
-        <label class="checkbox-inline col-sm-3">
-          <input type="checkbox" (click)="updateRsvp(guest, 'No')"> Game Over, can't make it...
-        </label>
+      </div>
       </div>
     </div>
     <div [hidden]="!household?.plus1">

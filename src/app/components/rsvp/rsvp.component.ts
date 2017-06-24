@@ -20,6 +20,11 @@ export class RSVPComponent implements OnInit {
   answers = [];
   answered: boolean = false;
   household: Household;
+  maritalStatus = { status: 'Nothing selected' };
+  statuses: string[] = [
+    "Game On! I'll be there!",
+    "Game Over, can't make it..."
+  ];
 
   constructor(
     private firebaseService: FirebaseService,
@@ -42,8 +47,23 @@ export class RSVPComponent implements OnInit {
       });
   }
 
-  updateRsvp(key: string, attending: string){
-    this.answers.push({name: key, rsvp: attending});
+  updateRsvp(key: string, attending: string, event){
+    let exists = false;
+    if (attending === "Game On! I'll be there!") {
+      attending = 'Yes'
+    }
+    if (attending === "Game Over, can't make it...") {
+      attending = 'No'
+    }
+    this.answers.forEach((guest) => {
+      if(guest.name==key){
+        guest.rsvp = attending;
+        exists = true;
+      }
+    });
+    if(!exists){
+      this.answers.push({name: key, rsvp: attending});
+    }
   }
 
   submitRsvp(note: string, plusone: string) {
