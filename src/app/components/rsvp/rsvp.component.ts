@@ -19,7 +19,10 @@ export class RSVPComponent implements OnInit {
   id: any;
   answers = [];
   answered: boolean = false;
+  error: boolean;
+  loading: boolean;
   household: Household;
+  updatedHousehold: Household;
   maritalStatus = { status: 'Nothing selected' };
   statuses: string[] = [
     "Game On! I'll be there!",
@@ -67,12 +70,27 @@ export class RSVPComponent implements OnInit {
   }
 
   submitRsvp(note: string, plusone: string) {
-    this.answers.push({note: note}, {plusone: plusone});
+    if(note) {
+      this.answers.push({note: note});
+    }
+    if(plusone) {
+      this.answers.push({plusone: plusone});
+    }
+    console.log("pre", this.household.answers);
     this.firebaseService.updateRsvp(this.id, this.answers);
-    setTimeout(() => this.redirect(), 500);
+    console.log("post", this.household.answers);
+    if(this.household.answers) {
+      this.loading = true;
+      this.error = false;
+      setTimeout(() => this.redirect(), 700);
+    } else {
+      this.error = true;
+
+    }
   }
 
   redirect() {
+    this.loading = false;
     this.router.navigate(['/rsvp/'+this.id+'/confirm'])
   }
 }

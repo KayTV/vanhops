@@ -33,8 +33,11 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button (click)="submitRsvp(notes.value, plusone.value)" type="button" class="btn btn-default">Submit</button>
+        <button [disabled]="!answers.length" (click)="submitRsvp(notes.value, plusone.value)" type="button" class="btn btn-default">Submit<i *ngIf="loading" class="fa fa-spinner fa-spin fa-lg fa-fw"></i></button>
       </div>
     </div>
   </form>
+  <div *ngIf="error">
+    <div  class="alert alert-danger" role="alert">Something went wrong, try again later please. If this keeps happening, contact one of those developers at vann5674@gmail.com</div>
+  </div>
 </div>
