@@ -61,11 +61,6 @@ export class FirebaseService {
     this.household = this.af.database.object('/households/'+index) as
     FirebaseObjectObservable<Household>
     this.household.update({answers: answers});
-    // if (this.household[index].answers) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
   }
 
   getGuests() {
